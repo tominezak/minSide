@@ -6,12 +6,12 @@ export const Navbar = () => {
         <ul className="flex space-x-4">
           <li>
             <a href="#" className="hover:underline">
-              Home
+              Om meg
             </a>
           </li>
           <li>
             <a href="#" className="hover:underline">
-              About
+              Prosjekter
             </a>
           </li>
           <li>
