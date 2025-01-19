@@ -1,27 +1,19 @@
-import "./App.css";
-import { Footer } from "./components/footer";
-import { Navbar } from "./components/navbar";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Bruk Routes i stedet for Switch
+import Home from "./Pages/OmMeg"; // Om meg
+import Projects from "./Pages/Projects"; // Prosjekter
+import Cv from "./Pages/CV"; // CV
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-
-      {/* Main content */}
-      <main className="flex-1 container mx-auto px-6 py-8 flex flex-col md:flex-row gap-6">
-        <section className="bg-gray-100 p-6 rounded-lg shadow-md flex-1">
-          <h2 className="text-2xl font-semibold mb-4">Section 1</h2>
-          <p>This is the content for section 1.</p>
-        </section>
-        <section className="bg-gray-100 p-6 rounded-lg shadow-md flex-1">
-          <h2 className="text-2xl font-semibold mb-4">Section 2</h2>
-          <p>This is the content for section 2.</p>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/cv" element={<Cv />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
