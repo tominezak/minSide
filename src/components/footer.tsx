@@ -8,7 +8,7 @@ export const Footer = () => {
           {/* Info om meg */}
           <div className="text-center">
             <h3 className="text-white text-lg font-semibold mb-4">
-              Company Name
+              Kontaktinfo
             </h3>
             <div className="space-y-3">
               <div className="flex items-center gap-2 justify-center">
@@ -29,7 +29,7 @@ export const Footer = () => {
           {/* Sodiale medier */}
           <div className="text-center">
             <h3 className="text-white text-lg font-semibold mb-4">
-              Connect With Us
+              Mine sosiale medier
             </h3>
             <div className="flex space-x-6 justify-center">
               <a href="#" className="hover:text-white transition-colors">
