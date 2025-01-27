@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import { Footer } from "../components/footer";
 import Bilde from "../images/Bilde.jpg";
 import Portrett from "../images/Portrett.jpeg";
 import Nurse from "../images/Nurse.png";
 import Pointer from "../images/Pointer.png";
 import Programmer from "../images/programmer.png";
+import { Footer } from "../components/footer";
+import Navbar from "../components/navbar";
 
 const Home: React.FC = () => {
   const handleSmoothScroll = (
@@ -18,6 +18,7 @@ const Home: React.FC = () => {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <>
       <Navbar />
