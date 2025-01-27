@@ -1,19 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Bruk Routes i stedet for Switch
-import Home from "./Pages/OmMeg"; // Om meg
-import Projects from "./Pages/Projects"; // Prosjekter
-import Cv from "./Pages/CV"; // CV
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import OmMeg from "./Pages/OmMeg";
+import CV from "./Pages/CV";
+import Projects from "./Pages/Projects";
+import { Footer } from "./components/footer";
 
-const App: React.FC = () => {
+function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/cv" element={<Cv />} />
-      </Routes>
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<OmMeg />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/cv" element={<CV />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
-};
+}
 
 export default App;
