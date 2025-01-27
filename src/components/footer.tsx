@@ -1,60 +1,43 @@
-import { Github, Linkedin, Mail, Twitter, MapPin, Phone } from "lucide-react";
+import React from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-12 justify-items-center">
-          {/* Info om meg */}
-          <div className="text-center">
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Kontaktinfo
+    <footer className="bg-white shadow-inner mt-auto">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {/* Social Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Kontakt
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 justify-center">
-                <MapPin className="h-5 w-5 text-gray-400" />
-                <span>123 Business Street, City, 12345</span>
-              </div>
-              <div className="flex items-center gap-2 justify-center">
-                <Phone className="h-5 w-5 text-gray-400" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-2 justify-center">
-                <Mail className="h-5 w-5 text-gray-400" />
-                <span>contact@company.com</span>
-              </div>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Github size={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Linkedin size={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Mail size={20} />
+              </a>
             </div>
           </div>
 
-          {/* Sodiale medier */}
-          <div className="text-center">
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Mine sosiale medier
+          {/* Strava Activities */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Siste Aktiviteter
             </h3>
-            <div className="flex space-x-6 justify-center">
-              <a href="#" className="hover:text-white transition-colors">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Github className="h-6 w-6" />
-              </a>
-              <a
-                href="mailto:contact@company.com"
-                className="hover:text-white transition-colors"
-              >
-                <Mail className="h-6 w-6" />
-              </a>
-            </div>
+            <div className="space-y-2"></div>
           </div>
-        </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-800">
-          <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Company Name. All rights reserved.
-          </p>
+          {/* Copyright */}
+          <div>
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Alle rettigheter forbeholdt
+            </p>
+          </div>
         </div>
       </div>
     </footer>
