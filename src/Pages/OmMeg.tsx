@@ -1,5 +1,4 @@
 import React from "react";
-import Portrett from "../images/Portrett.jpeg";
 
 function OmMeg() {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -10,7 +9,6 @@ function OmMeg() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <div className="relative h-screen">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600">
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -50,7 +48,7 @@ function OmMeg() {
               <div className="relative w-96 h-96 mx-auto">
                 <div className="absolute inset-0 bg-white rounded-full opacity-10"></div>
                 <img
-                  src={Portrett}
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80"
                   className="absolute inset-0 w-full h-full object-cover rounded-full"
                   alt="Profilbilde"
                 />
@@ -60,107 +58,83 @@ function OmMeg() {
         </div>
       </div>
 
-      {/* About Section */}
       <div id="merOmMeg" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Min Historie
-              </h2>
-              <div className="prose prose-lg text-gray-600">
-                <p className="mb-4">
-                  Min reise innen teknologi begynte med en nysgjerrighet for
-                  hvordan ting fungerer. Jeg har alltid vært fascinert av
-                  muligheten til å skape noe fra bunnen av, og programmering ga
-                  meg verktøyene til å gjøre nettopp dette.
-                </p>
-                <p className="mb-4">
-                  Gjennom årene har jeg jobbet med en rekke prosjekter som har
-                  utfordret meg og hjulpet meg å vokse som utvikler. Jeg trives
-                  spesielt godt med å løse komplekse problemer og finne elegante
-                  løsninger som forbedrer brukeropplevelsen.
-                </p>
-                <p>
-                  I dag fokuserer jeg på å bygge moderne web-applikasjoner med
-                  fokus på brukervennlighet, ytelse og skalerbarhet. Jeg er
-                  alltid på utkikk etter nye utfordringer og muligheter til å
-                  lære og vokse.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                    Frontend
-                  </h3>
-                  <p className="text-blue-700">React, Vue, Angular</p>
-                </div>
-                <div className="bg-purple-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-purple-900 mb-2">
-                    Backend
-                  </h3>
-                  <p className="text-purple-700">
-                    Node.js, Express, PostgreSQL
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-4 mt-8">
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-green-900 mb-2">
-                    Design
-                  </h3>
-                  <p className="text-green-700">UI/UX, Figma, Adobe XD</p>
-                </div>
-                <div className="bg-orange-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-orange-900 mb-2">
-                    DevOps
-                  </h3>
-                  <p className="text-orange-700">Docker, AWS, CI/CD</p>
-                </div>
-              </div>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Om meg</h2>
+            <div className="prose prose-lg text-gray-600">
+              <p className="mb-4">
+                Jeg er en 25 år gammel jente som går andre året på bachelor i
+                dataingeniør på OsloMet.
+              </p>
+              <p className="mb-4">
+                Gjennom årene har jeg jobbet med en rekke prosjekter som har
+                utfordret meg og hjulpet meg å vokse som utvikler. Jeg trives
+                spesielt godt med å løse komplekse problemer og finne elegante
+                løsninger som forbedrer brukeropplevelsen.
+              </p>
             </div>
           </div>
 
-          <div className="mt-24">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-              Hva Jeg Tilbyr
+          <div className="mt-14">
+            <h2 className="text-2xl font-bold text-gray-900 mb-12 text-center">
+              Mine tekniske ferdigheter
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">💻</span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg">
+                <div className="flex flex-col items-center mb-4">
+                  <span className="text-4xl mb-2">💻</span>
+                  <h3 className="text-xl font-semibold text-blue-900">
+                    Programmeringsspråk
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Webutvikling
-                </h3>
-                <p className="text-gray-600">
-                  Moderne og responsive nettsider bygget med de nyeste
-                  teknologiene.
-                </p>
+                <ul className="text-blue-800 space-y-2 list-disc list-inside">
+                  <li>JavaScript/TypeScript</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>SQL</li>
+                  <li>HTML/CSS</li>
+                  <li>Matlab</li>
+                </ul>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">🎨</span>
+              <div className="bg-purple-50 p-6 rounded-lg shadow-lg">
+                <div className="flex flex-col items-center mb-4">
+                  <span className="text-4xl mb-2">🎨</span>
+                  <h3 className="text-xl font-semibold text-purple-900">
+                    Rammeverk/bibliotek
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  UI/UX Design
-                </h3>
-                <p className="text-gray-600">
-                  Brukervennlig design som skaper engasjerende opplevelser.
-                </p>
+                <ul className="text-purple-800 space-y-2 list-disc list-inside">
+                  <li>Spring Boot</li>
+                  <li>jQuery</li>
+                  <li>Bootstrap</li>
+                  <li>React</li>
+                  <li>Tailwind CSS</li>
+                </ul>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">🚀</span>
+              <div className="bg-green-50 p-6 rounded-lg shadow-lg">
+                <div className="flex flex-col items-center mb-4">
+                  <span className="text-4xl mb-2">🔧</span>
+                  <h3 className="text-xl font-semibold text-green-900">
+                    Versjonskontroll
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Konsultering
-                </h3>
-                <p className="text-gray-600">
-                  Teknisk rådgivning og strategisk planlegging av prosjekter.
-                </p>
+                <ul className="text-green-800 space-y-2 list-disc list-inside">
+                  <li>Git</li>
+                  <li>GitHub</li>
+                </ul>
+              </div>
+              <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+                <div className="flex flex-col items-center mb-4">
+                  <span className="text-4xl mb-2">⚡</span>
+                  <h3 className="text-xl font-semibold text-orange-900">
+                    Utviklingsverktøy
+                  </h3>
+                </div>
+                <ul className="text-orange-800 space-y-2 list-disc list-inside">
+                  <li>IntelliJ</li>
+                  <li>Visual Studio Code</li>
+                </ul>
               </div>
             </div>
           </div>
