@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // Få gjeldende lokasjon
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +17,28 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Sjekk om vi er på /projects eller /cv
+  const isSpecialPage =
+    location.pathname === "/projects" || location.pathname === "/cv";
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-200 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isSpecialPage
+          ? "bg-blue-600 shadow-lg" // Spesialnavbar for Projects og CV
+          : isScrolled
+          ? "bg-white shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo Section */}
+          {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div
                 className={`text-xl font-bold px-3 py-2 rounded-full ${
-                  isScrolled
+                  isSpecialPage || isScrolled
                     ? "bg-gray-800 text-white"
                     : "bg-white text-gray-800"
                 }`}
@@ -39,13 +48,13 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Navigasjon (Desktop) */}
           <div className="hidden sm:flex sm:items-center sm:space-x-8">
             <Link
               to="/"
               className={`${
-                isScrolled
-                  ? "text-gray-600 hover:text-gray-900"
+                isSpecialPage || isScrolled
+                  ? "text-gray-100 hover:text-gray-200"
                   : "text-white/90 hover:text-white"
               }`}
             >
@@ -54,8 +63,8 @@ const Navbar: React.FC = () => {
             <Link
               to="/projects"
               className={`${
-                isScrolled
-                  ? "text-gray-600 hover:text-gray-900"
+                isSpecialPage || isScrolled
+                  ? "text-gray-100 hover:text-gray-200"
                   : "text-white/90 hover:text-white"
               }`}
             >
@@ -64,8 +73,8 @@ const Navbar: React.FC = () => {
             <Link
               to="/cv"
               className={`${
-                isScrolled
-                  ? "text-gray-600 hover:text-gray-900"
+                isSpecialPage || isScrolled
+                  ? "text-gray-100 hover:text-gray-200"
                   : "text-white/90 hover:text-white"
               }`}
             >
@@ -73,12 +82,14 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Meny */}
           <div className="sm:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`${
-                isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white"
+                isSpecialPage || isScrolled
+                  ? "text-gray-100 hover:text-gray-200"
+                  : "text-white"
               }`}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,7 +98,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Navigasjon (Mobil) */}
       {isMenuOpen && (
         <div className="sm:hidden bg-white shadow-lg">
           <div className="pt-2 pb-3 space-y-1">
