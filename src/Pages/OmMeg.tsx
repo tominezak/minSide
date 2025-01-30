@@ -59,27 +59,63 @@ function OmMeg() {
         </div>
       </div>
 
-      <div id="merOmMeg" className="min-h-screen bg-white flex items-center">
+      <div
+        id="merOmMeg"
+        className="min-h-screen bg-gradient-to-b from-white to-blue-50 flex items-center"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Om meg</h2>
-            <div className="prose prose-lg text-gray-600">
-              <p className="mb-4">
-                Jeg er en 25 år gammel jente som går andre året på bachelor i
-                dataingeniør på OsloMet.
-              </p>
-              <p className="mb-4">
-                Gjennom årene har jeg jobbet med en rekke prosjekter som har
-                utfordret meg og hjulpet meg å vokse som utvikler. Jeg trives
-                spesielt godt med å løse komplekse problemer og finne elegante
-                løsninger som forbedrer brukeropplevelsen.
-              </p>
+            <div className="text-center mb-8">
+              <span className="text-4xl mb-4 inline-block">👋</span>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Om meg</h2>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+              <div className="flex items-start space-x-4">
+                <span className="text-large">⚫️</span>
+                <p className="text-gray-600">
+                  Jeg er en 25 år gammel jente som går andre året på bachelor i
+                  dataingeniør på OsloMet. Gjennom ingeniørstudiet har jeg
+                  opparbeidet meg et solid grunnlag innen programmering og
+                  teknologi.
+                </p>
+              </div>
+              <div className="flex items-start space-x-4">
+                <span className="text-large">⚫️</span>
+                <p className="text-gray-600">
+                  Jeg har en genuin interesse for fagområdet data og
+                  programmering, og jeg er veldig motivert til å lære mer. I
+                  løpet av studie til nå har jeg jobbet med flere spennende
+                  prosjekter, og arbeidet med ulike programmeringsspråk. Jeg har
+                  også erfaring med å jobbe i team, og trives godt med dette.
+                  Disse erfaringene har bidratt til at jeg har utviklet gode
+                  samarbeidsevne
+                </p>
+              </div>
+              <div className="flex items-start space-x-4">
+                <span className="text-large">⚫️</span>
+                <p className="text-gray-600">
+                  Fra min tidligere bachelor tar jeg med meg kunnskap og
+                  ferdigheter innenfor problemløsning, kommunikasjon, arbeid med
+                  mennesker og samarbeid. Jeg tror dette vil være verdifullt i
+                  en stilling hos dere. Arbeidserfaring fra butikk har gitt meg
+                  erfaringer rundt service, salg, samarbeid, kommunikasjon med
+                  kunder og forstå deres behov.
+                </p>
+              </div>
+              <div className="flex items-start space-x-4">
+                <span className="text-large">⚫️</span>
+                <p className="text-gray-600">
+                  Jeg er svært motivert til å videreutvikle mine ferdigheter og
+                  tilegne nye kunnskaper. Har du en spennende stilling som
+                  passer i min profil, ta gjerne kontakt.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="min-h-screen bg-gray-50 flex items-center">
+      <div className="bg-gray-50 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <h2 className="text-2xl font-bold text-gray-900 mb-12 text-center">
             Mine tekniske ferdigheter

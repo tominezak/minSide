@@ -19,6 +19,19 @@ const Navbar: React.FC = () => {
 
   const isSpecialPage =
     location.pathname === "/projects" || location.pathname === "/cv";
+  const isHomePage = location.pathname === "/";
+
+  const getNavLinkClass = () => {
+    if (isSpecialPage) {
+      return "text-white hover:text-gray-200";
+    }
+    if (isHomePage) {
+      return isScrolled
+        ? "text-gray-800 hover:text-gray-600"
+        : "text-white/90 hover:text-white";
+    }
+    return "text-gray-800 hover:text-gray-600";
+  };
 
   return (
     <nav
@@ -32,6 +45,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
+          {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div
@@ -46,45 +60,24 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
+          {/* Navigasjon (Desktop) */}
           <div className="hidden sm:flex sm:items-center sm:space-x-8">
-            <Link
-              to="/"
-              className={`${
-                isSpecialPage || isScrolled
-                  ? "text-gray-800 hover:text-gray-900"
-                  : "text-white/90 hover:text-white"
-              }`}
-            >
+            <Link to="/" className={getNavLinkClass()}>
               Hjem
             </Link>
-            <Link
-              to="/projects"
-              className={`${
-                isSpecialPage || isScrolled
-                  ? "text-gray-800 hover:text-gray-900"
-                  : "text-white/90 hover:text-white"
-              }`}
-            >
+            <Link to="/projects" className={getNavLinkClass()}>
               Prosjekter
             </Link>
-            <Link
-              to="/cv"
-              className={`${
-                isSpecialPage || isScrolled
-                  ? "text-gray-800 hover:text-gray-900"
-                  : "text-white/90 hover:text-white"
-              }`}
-            >
+            <Link to="/cv" className={getNavLinkClass()}>
               CV
             </Link>
           </div>
 
+          {/* Mobile Meny */}
           <div className="sm:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${
-                isSpecialPage || isScrolled ? "text-gray-800" : "text-white"
-              }`}
+              className={isSpecialPage ? "text-white" : getNavLinkClass()}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -92,6 +85,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
+      {/* Navigasjon (Mobil) */}
       {isMenuOpen && (
         <div className="sm:hidden bg-white shadow-lg">
           <div className="pt-2 pb-3 space-y-1">
