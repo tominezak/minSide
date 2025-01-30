@@ -1,4 +1,5 @@
 import React from "react";
+import Portrett from "../images/Portrett.jpeg";
 
 function OmMeg() {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -48,7 +49,7 @@ function OmMeg() {
               <div className="relative w-96 h-96 mx-auto">
                 <div className="absolute inset-0 bg-white rounded-full opacity-10"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80"
+                  src={Portrett}
                   className="absolute inset-0 w-full h-full object-cover rounded-full"
                   alt="Profilbilde"
                 />
@@ -58,8 +59,8 @@ function OmMeg() {
         </div>
       </div>
 
-      <div id="merOmMeg" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="merOmMeg" className="min-h-screen bg-white flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om meg</h2>
             <div className="prose prose-lg text-gray-600">
@@ -75,67 +76,69 @@ function OmMeg() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="mt-14">
-            <h2 className="text-2xl font-bold text-gray-900 mb-12 text-center">
-              Mine tekniske ferdigheter
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-blue-50 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center mb-4">
-                  <span className="text-4xl mb-2">💻</span>
-                  <h3 className="text-xl font-semibold text-blue-900">
-                    Programmeringsspråk
-                  </h3>
-                </div>
-                <ul className="text-blue-800 space-y-2 list-disc list-inside">
-                  <li>JavaScript/TypeScript</li>
-                  <li>Python</li>
-                  <li>Java</li>
-                  <li>SQL</li>
-                  <li>HTML/CSS</li>
-                  <li>Matlab</li>
-                </ul>
+      <div className="min-h-screen bg-gray-50 flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-12 text-center">
+            Mine tekniske ferdigheter
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-blue-50 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center mb-4">
+                <span className="text-4xl mb-2">💻</span>
+                <h3 className="text-xl font-semibold text-blue-900">
+                  Programmeringsspråk
+                </h3>
               </div>
-              <div className="bg-purple-50 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center mb-4">
-                  <span className="text-4xl mb-2">🎨</span>
-                  <h3 className="text-xl font-semibold text-purple-900">
-                    Rammeverk/bibliotek
-                  </h3>
-                </div>
-                <ul className="text-purple-800 space-y-2 list-disc list-inside">
-                  <li>Spring Boot</li>
-                  <li>jQuery</li>
-                  <li>Bootstrap</li>
-                  <li>React</li>
-                  <li>Tailwind CSS</li>
-                </ul>
+              <ul className="text-blue-800 space-y-2 list-disc list-inside">
+                <li>JavaScript/TypeScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>SQL</li>
+                <li>HTML/CSS</li>
+                <li>Matlab</li>
+              </ul>
+            </div>
+            <div className="bg-purple-50 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center mb-4">
+                <span className="text-4xl mb-2">🎨</span>
+                <h3 className="text-xl font-semibold text-purple-900">
+                  Rammeverk/bibliotek
+                </h3>
               </div>
-              <div className="bg-green-50 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center mb-4">
-                  <span className="text-4xl mb-2">🔧</span>
-                  <h3 className="text-xl font-semibold text-green-900">
-                    Versjonskontroll
-                  </h3>
-                </div>
-                <ul className="text-green-800 space-y-2 list-disc list-inside">
-                  <li>Git</li>
-                  <li>GitHub</li>
-                </ul>
+              <ul className="text-purple-800 space-y-2 list-disc list-inside">
+                <li>Spring Boot</li>
+                <li>jQuery</li>
+                <li>Bootstrap</li>
+                <li>React</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
+            <div className="bg-green-50 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center mb-4">
+                <span className="text-4xl mb-2">🔧</span>
+                <h3 className="text-xl font-semibold text-green-900">
+                  Versjonskontroll
+                </h3>
               </div>
-              <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center mb-4">
-                  <span className="text-4xl mb-2">⚡</span>
-                  <h3 className="text-xl font-semibold text-orange-900">
-                    Utviklingsverktøy
-                  </h3>
-                </div>
-                <ul className="text-orange-800 space-y-2 list-disc list-inside">
-                  <li>IntelliJ</li>
-                  <li>Visual Studio Code</li>
-                </ul>
+              <ul className="text-green-800 space-y-2 list-disc list-inside">
+                <li>Git</li>
+                <li>GitHub</li>
+              </ul>
+            </div>
+            <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center mb-4">
+                <span className="text-4xl mb-2">⚡</span>
+                <h3 className="text-xl font-semibold text-orange-900">
+                  Utviklingsverktøy
+                </h3>
               </div>
+              <ul className="text-orange-800 space-y-2 list-disc list-inside">
+                <li>IntelliJ</li>
+                <li>Visual Studio Code</li>
+              </ul>
             </div>
           </div>
         </div>
