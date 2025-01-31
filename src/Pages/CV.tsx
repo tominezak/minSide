@@ -1,4 +1,5 @@
 import React from "react";
+import test from "../images/test.jpg";
 
 function CV() {
   return (
@@ -6,7 +7,7 @@ function CV() {
       <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
         <div className="flex items-center space-x-6 mb-8">
           <img
-            src="https://placekitten.com/200/200"
+            src={test}
             alt="Profilbilde"
             className="w-32 h-32 rounded-full object-cover"
           />
