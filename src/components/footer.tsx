@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Mail, MapPin, Phone, Calendar } from "lucide-react";
+import { FaStrava } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -15,7 +16,7 @@ export const Footer = () => {
                   className="mr-2 text-blue-600"
                   strokeWidth={3}
                 />
-                <span>Din Adresse Her</span>
+                <span>Svoldergata 2B</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <Phone
@@ -23,7 +24,7 @@ export const Footer = () => {
                   className="mr-2 text-blue-600"
                   strokeWidth={3}
                 />
-                <span>Ditt Telefonnummer</span>
+                <span>98858944</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <Calendar
@@ -31,7 +32,7 @@ export const Footer = () => {
                   className="mr-2 text-blue-600"
                   strokeWidth={3}
                 />
-                <span>Din Fødselsdato</span>
+                <span>17.10.1999</span>
               </div>
             </div>
           </div>
@@ -43,21 +44,39 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Copyright */}
+          {/* Contact */}
           <div className="w-96">
             <div className="float-end">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Kontakt
               </h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="https://github.com/tominezak"
+                  target="_blank"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   <Github size={20} />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="https://www.linkedin.com/in/tomine-zakariassen-390022327/"
+                  target="_blank"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="mailto:tominezak@gmail.com"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   <Mail size={20} />
+                </a>
+                <a
+                  href="https://www.strava.com/athletes/61033275"
+                  target="_blank"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  <FaStrava size={20} />
                 </a>
               </div>
             </div>
