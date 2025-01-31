@@ -4,20 +4,30 @@ import { ExternalLink } from "lucide-react";
 function Projects() {
   const projects = [
     {
-      title: "Prosjekt 1",
-      description: "Beskrivelse av prosjekt 1 og teknologiene som ble brukt.",
+      title: "Handleliste",
+      description:
+        "En handleliste-app der brukere kan legge til, redigere og slette varer. Bygget med Java, JavaScript, HTML og CSS.",
       image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
-      link: "#",
-      tags: ["React", "Node.js", "MongoDB"],
+        "https://images.unsplash.com/photo-1515706886582-54c73c5eaf41?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://github.com/tominezak/Handleliste",
+      tags: [
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Spring Boot",
+        "SQL",
+      ],
     },
     {
-      title: "Prosjekt 2",
-      description: "Beskrivelse av prosjekt 2 og teknologiene som ble brukt.",
+      title: "Kino-booking",
+      description:
+        "Applikasjon utviklet gjennom en obligatorisk oppgave på studie som lar brukere velge en film, angi billetter og registrere informasjon for kjøp. Bygget med HTML, JavaScript og utvidet med Spring Boot og Java for serverlagring, med Bootstrap for styling.",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80",
-      link: "#",
-      tags: ["TypeScript", "Express", "PostgreSQL"],
+        "https://images.unsplash.com/photo-1604975701397-6365ccbd028a?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://github.com/tominezak/Oblig-repo",
+      tags: ["Java", "JavaScript", "HTML", "Bootstrap", "Spring Boot", "SQL"],
     },
   ];
 
@@ -53,6 +63,7 @@ function Projects() {
               <a
                 href={project.link}
                 className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                target="_blank"
               >
                 Se prosjekt <ExternalLink size={16} className="ml-1" />
               </a>
