@@ -39,7 +39,7 @@ export const Footer = () => {
 
           {/* Personal Info */}
           <div>
-            <p className="text-gray-500 text-sm my-16">
+            <p className="text-gray-500 my-16">
               © {new Date().getFullYear()} Alle rettigheter forbeholdt
             </p>
           </div>

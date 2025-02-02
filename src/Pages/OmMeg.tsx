@@ -88,7 +88,7 @@ function OmMeg() {
                   prosjekter, og arbeidet med ulike programmeringsspråk. Jeg har
                   også erfaring med å jobbe i team, og trives godt med dette.
                   Disse erfaringene har bidratt til at jeg har utviklet gode
-                  samarbeidsevne
+                  samarbeidsevner.
                 </p>
               </div>
               <div className="flex items-start space-x-4">
@@ -107,7 +107,7 @@ function OmMeg() {
                 <p className="text-gray-600">
                   Jeg er svært motivert til å videreutvikle mine ferdigheter og
                   tilegne nye kunnskaper. Har du en spennende stilling som
-                  passer i min profil, ta gjerne kontakt.
+                  passer til min profil, ta gjerne kontakt.
                 </p>
               </div>
             </div>
