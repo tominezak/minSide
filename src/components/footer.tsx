@@ -1,4 +1,3 @@
-import React from "react";
 import { Github, Linkedin, Mail, MapPin, Phone, Calendar } from "lucide-react";
 import { FaStrava } from "react-icons/fa";
 

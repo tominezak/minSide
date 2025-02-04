@@ -1,4 +1,3 @@
-import React from "react";
 import test from "../images/test.jpg";
 import { FileText } from "lucide-react";
 
