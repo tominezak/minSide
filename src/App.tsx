@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import OmMeg from "./Pages/OmMeg";
@@ -19,6 +20,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 }
