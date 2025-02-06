@@ -47,7 +47,7 @@ export const Footer = () => {
           <div className="w-full md:w-96">
             <div className="flex flex-col items-center md:items-end">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Kontakt
+                Kontakt meg
               </h3>
               <div className="flex space-x-4">
                 <a
@@ -69,6 +69,13 @@ export const Footer = () => {
                   className="text-gray-600 hover:text-gray-900"
                 >
                   <Mail size={20} />
+                </a>
+                <a
+                  href="https://www.strava.com/athletes/61033275"
+                  target="_blank"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  <FaStrava size={20} />
                 </a>
               </div>
             </div>
