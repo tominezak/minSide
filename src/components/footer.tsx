@@ -5,10 +5,10 @@ export const Footer = () => {
   return (
     <footer className="bg-white shadow-inner mt-auto">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between w-full">
-          {/* Social Links */}
-          <div className="w-96">
-            <div className="space-y-2 mt-4">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+          {/* Personal Info - Now centered on mobile */}
+          <div className="w-full md:w-96">
+            <div className="flex flex-col items-center md:items-start space-y-2">
               <div className="flex items-center text-gray-600">
                 <MapPin
                   size={16}
@@ -36,16 +36,16 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Personal Info */}
-          <div>
-            <p className="text-gray-500 my-16">
+          {/* Copyright - Already centered */}
+          <div className="text-center">
+            <p className="text-gray-500">
               © {new Date().getFullYear()} Alle rettigheter forbeholdt
             </p>
           </div>
 
-          {/* Contact */}
-          <div className="w-96">
-            <div className="float-end">
+          {/* Contact - Already centered */}
+          <div className="w-full md:w-96">
+            <div className="flex flex-col items-center md:items-end">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Kontakt
               </h3>
@@ -69,13 +69,6 @@ export const Footer = () => {
                   className="text-gray-600 hover:text-gray-900"
                 >
                   <Mail size={20} />
-                </a>
-                <a
-                  href="https://www.strava.com/athletes/61033275"
-                  target="_blank"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  <FaStrava size={20} />
                 </a>
               </div>
             </div>
