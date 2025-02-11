@@ -15,7 +15,7 @@ export const Footer = () => {
                   className="mr-2 text-blue-600"
                   strokeWidth={3}
                 />
-                <span>Svoldergata 2B</span>
+                <span>0271 Oslo</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <Phone
