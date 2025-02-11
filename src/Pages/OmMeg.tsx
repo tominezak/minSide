@@ -10,14 +10,14 @@ function OmMeg() {
 
   return (
     <div className="min-h-screen">
-      <div className="relative h-screen">
+      <div className="relative min-h-screen md:h-screen">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600">
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-full items-center">
-            <div className="w-full md:w-1/2 text-white">
+          <div className="flex flex-col-reverse md:flex-row md:h-full md:items-center">
+            <div className="w-full md:w-1/2 text-white pb-5 md:pb-0">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Tomine Garborg Zakariassen
               </h1>
@@ -45,12 +45,12 @@ function OmMeg() {
                 </a>
               </div>
             </div>
-            <div className="hidden md:block w-1/2">
-              <div className="relative w-96 h-96 mx-auto">
-                <div className="absolute inset-0 bg-white rounded-full opacity-10"></div>
+            <div className="w-[60vw] mt-20 mb-10 md:mb-0 md:mt-0 mx-auto md:w-1/2">
+              <div className="relative md:w-96 md:h-96 mx-auto">
+                <div className="md:absolute inset-0 bg-white rounded-full opacity-10"></div>
                 <img
                   src={Portrett}
-                  className="absolute inset-0 w-full h-full object-cover rounded-full"
+                  className="md:absolute inset-0 w-full object-cover rounded-full"
                   alt="Profilbilde"
                 />
               </div>
