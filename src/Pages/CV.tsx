@@ -2,19 +2,18 @@ import test from "../images/test.jpg";
 import { FileText } from "lucide-react";
 
 function CV() {
-  // Sample PDF URLs - replace these with your actual PDF URLs
   const attachments = [
     {
       name: "Vitnemål - Bachelor i Sykepleie",
-      url: "#", // Replace with actual PDF URL
+      url: "src/attachments/Vitnemål - bachelor i sykepleie.pdf",
     },
     {
-      name: "Autorisasjonsbevis - Sykepleier",
-      url: "#", // Replace with actual PDF URL
+      name: "Karakterutskrift - Bachelor i Dataingeniør",
+      url: "src/attachments/Karakterutskrift - Bachelor i dataingeniør.pdf",
     },
     {
       name: "Attester fra tidligere arbeidsgivere",
-      url: "#", // Replace with actual PDF URL
+      url: "src/attachments/Attester - Coop & Bogerud.pdf",
     },
   ];
   return (
@@ -22,7 +21,7 @@ function CV() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10">
           {/* Header/Profile */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10 mt-24 sm:mt-10">
             <img
               src={test}
               alt="Profilbilde"
