@@ -6,7 +6,7 @@ function CV() {
   const attachments = [
     {
       name: "Vitnemål - Bachelor i Sykepleie",
-      url: "#", // Replace with actual PDF URL
+      url: "src/attachments/Vitnemål - bachelor i sykepleie.pdf",
     },
     {
       name: "Autorisasjonsbevis - Sykepleier",
