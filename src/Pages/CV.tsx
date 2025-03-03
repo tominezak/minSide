@@ -1,7 +1,10 @@
-import test from "../images/test.jpg";
+import PortrettCV from "../images/PortrettCV.jpg";
 import { FileText } from "lucide-react";
 
 function CV() {
+  {
+    /* Lister av vedlegg */
+  }
   const attachments = [
     {
       name: "Vitnemål - Bachelor i Sykepleie",
@@ -19,11 +22,12 @@ function CV() {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+        {/* Hovedinnhold - hvit bakgrunn, avrundede hjørner og skygge */}
         <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10">
-          {/* Header/Profile */}
+          {/* Header bestående av profilbilde og tittel */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10 mt-24 sm:mt-10">
             <img
-              src={test}
+              src={PortrettCV}
               alt="Profilbilde"
               className="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover shadow-md"
             />
@@ -42,6 +46,7 @@ function CV() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b">
               Arbeidserfaring
             </h2>
+            {/* Array av jobbobjekter som mapes til JSX */}
             <div className="space-y-8">
               {[
                 {
@@ -159,6 +164,7 @@ function CV() {
               Ferdigheter
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              {/* Liste over ferdigheter med ikoner */}
               {[
                 {
                   title: "Programmeringsspråk",
@@ -216,6 +222,7 @@ function CV() {
               Vedlegg
             </h2>
             <div className="space-y-4">
+              {/* Hver vedleggslenke vises som en klikkbar rad */}
               {attachments.map((attachment, index) => (
                 <a
                   key={index}

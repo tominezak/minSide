@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Navigasjon (Desktop) */}
+          {/* Navbar */}
           <div className="hidden sm:flex sm:items-center sm:space-x-8">
             <Link to="/" className={getNavLinkClass()}>
               Hjem
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Meny */}
+          {/* Mobil */}
           <div className="sm:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Navigasjon (Mobil) */}
+      {/* Navbar (Mobil) */}
       {isMenuOpen && (
         <div className="sm:hidden bg-white shadow-lg">
           <div className="pt-2 pb-3 space-y-1">
