@@ -1,29 +1,56 @@
-import test from "../images/test.jpg";
+import PortrettCV from "../images/PortrettCV.jpg";
 import { FileText } from "lucide-react";
+import { useEffect, useState } from "react";
 
 function CV() {
+  const [pdfBasePath, setPdfBasePath] = useState("");
+
+  useEffect(() => {
+    // Determine if we're in development or production
+    const isProduction =
+      window.location.hostname !== "localhost" &&
+      window.location.hostname !== "127.0.0.1";
+
+    // Set the base path accordingly
+    setPdfBasePath(isProduction ? "/attachments" : "/src/attachments");
+  }, []);
+
+  // Updated attachments with dynamic path handling
   const attachments = [
     {
       name: "Vitnemål - Bachelor i Sykepleie",
-      url: "src/attachments/Vitnemål - bachelor i sykepleie.pdf",
+      filename: "Vitnemål - bachelor i sykepleie.pdf",
     },
     {
       name: "Karakterutskrift - Bachelor i Dataingeniør",
-      url: "src/attachments/Karakterutskrift - Bachelor i dataingeniør.pdf",
+      filename: "Karakterutskrift - Bachelor i dataingeniør.pdf",
     },
     {
       name: "Attester fra tidligere arbeidsgivere",
-      url: "src/attachments/Attester - Coop & Bogerud.pdf",
+      filename: "Attester - Coop & Bogerud.pdf",
     },
   ];
+
+  // Function to handle attachment clicks
+  const handleAttachmentClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    filename: string
+  ) => {
+    e.preventDefault();
+    const fullPath = `${pdfBasePath}/${filename}`;
+    console.log("Opening PDF at path:", fullPath);
+    window.open(fullPath, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+        {/* Hovedinnhold - hvit bakgrunn, avrundede hjørner og skygge */}
         <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10">
-          {/* Header/Profile */}
+          {/* Header bestående av profilbilde og tittel */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10 mt-24 sm:mt-10">
             <img
-              src={test}
+              src={PortrettCV}
               alt="Profilbilde"
               className="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover shadow-md"
             />
@@ -42,6 +69,7 @@ function CV() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b">
               Arbeidserfaring
             </h2>
+            {/* Array av jobbobjekter som mapes til JSX */}
             <div className="space-y-8">
               {[
                 {
@@ -159,6 +187,7 @@ function CV() {
               Ferdigheter
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              {/* Liste over ferdigheter med ikoner */}
               {[
                 {
                   title: "Programmeringsspråk",
@@ -216,19 +245,18 @@ function CV() {
               Vedlegg
             </h2>
             <div className="space-y-4">
+              {/* Hver vedleggslenke vises som en klikkbar rad med forbedret håndtering */}
               {attachments.map((attachment, index) => (
-                <a
+                <button
                   key={index}
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors group p-2 rounded-lg hover:bg-blue-50/80"
+                  onClick={(e) => handleAttachmentClick(e, attachment.filename)}
+                  className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors group p-2 rounded-lg hover:bg-blue-50/80 w-full text-left"
                 >
                   <FileText className="w-5 h-5 group-hover:text-blue-600 shrink-0" />
                   <span className="border-b border-dashed border-gray-300 group-hover:border-blue-600">
                     {attachment.name}
                   </span>
-                </a>
+                </button>
               ))}
             </div>
           </section>

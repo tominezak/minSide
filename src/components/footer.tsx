@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="bg-white shadow-inner mt-auto">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
-          {/* Personal Info - Now centered on mobile */}
+          {/* Personalia */}
           <div className="w-full md:w-96">
             <div className="flex flex-col items-center md:items-start space-y-2">
               <div className="flex items-center text-gray-600">
@@ -36,14 +36,14 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Copyright - Already centered */}
+          {/* Copyright */}
           <div className="text-center">
             <p className="text-gray-500">
               © {new Date().getFullYear()} Alle rettigheter forbeholdt
             </p>
           </div>
 
-          {/* Contact - Already centered */}
+          {/* Kontaktinfo */}
           <div className="w-full md:w-96">
             <div className="flex flex-col items-center md:items-end">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
