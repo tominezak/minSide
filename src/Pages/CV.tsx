@@ -8,15 +8,15 @@ function CV() {
   const attachments = [
     {
       name: "Vitnemål - Bachelor i Sykepleie",
-      url: "src/attachments/Vitnemål - bachelor i sykepleie.pdf",
+      url: "/attachments/Vitnemål - bachelor i sykepleie.pdf",
     },
     {
       name: "Karakterutskrift - Bachelor i Dataingeniør",
-      url: "src/attachments/Karakterutskrift - Bachelor i dataingeniør.pdf",
+      url: "/attachments/Karakterutskrift - Bachelor i dataingeniør.pdf",
     },
     {
       name: "Attester fra tidligere arbeidsgivere",
-      url: "src/attachments/Attester - Coop & Bogerud.pdf",
+      url: "/attachments/Attester - Coop & Bogerud.pdf",
     },
   ];
   return (
