@@ -78,19 +78,19 @@ function CV() {
                   title: "Cafémedarbeider",
                   company: "Bekkestua Bibliotekcafé",
                   period: "02.2019 - 06.2019",
-                  duties: ["Salg, baking og kaffebrygging mm."],
+                  duties: ["Salg, baking, kaffebrygging mm."],
                 },
                 {
                   title: "Butikkmedarbeider",
                   company: "Coop Extra Lommedalen",
                   period: "08.2018 - 11.2018",
-                  duties: ["Kasse, vareplassering & rydding mm."],
+                  duties: ["Kasse, vareplassering, rydding mm."],
                 },
                 {
-                  title: "Konfirmantleder",
-                  company: "Lommedalen Kirke",
-                  period: "02.2015",
-                  duties: [],
+                  title: "Butikkmedarbeider",
+                  company: "Bogerud tekstil AS",
+                  period: "06.2016 - 07.2018",
+                  duties: ["Ta imot varer, rydde, salg, kundebehandling mm."],
                 },
               ].map((job, index) => (
                 <div
