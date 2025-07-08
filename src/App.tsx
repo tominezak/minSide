@@ -5,7 +5,7 @@ import OmMeg from "./Pages/OmMeg";
 import CV from "./Pages/CV";
 import Projects from "./Pages/Projects";
 import { Footer } from "./components/footer";
-
+/*
 function App() {
   return (
     <Router>
@@ -26,3 +26,4 @@ function App() {
 }
 
 export default App;
+*/
