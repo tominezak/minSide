@@ -33,18 +33,16 @@ function Projects() {
       description:
         " En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python med PyQt5 for GUI.",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1509803874385-db7c23652552?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       link: "https://github.com/tominezak/WheaterAPI-app",
       tags: ["Python", "PyQt5", "API"],
     },
     {
-      title: "Flere prosjekter kommer snart!",
+      title: "🚧 Flere prosjekter kommer snart!",
       description:
-        "Jeg jobber kontinuerlig med nye prosjekter og vil oppdatere denne siden snart med mer innhold.",
+        "Jeg jobber kontinuerlig med nye prosjekter og vil oppdatere siden min fortløpende.",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      link: "#",
-      tags: ["Kommer snart"],
+        "https://images.unsplash.com/photo-1607434472257-d9f8e57a643d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
@@ -67,23 +65,27 @@ function Projects() {
                 {project.title}
               </h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={project.link}
-                className="inline-flex items-center text-blue-600 hover:text-blue-800"
-                target="_blank"
-              >
-                Se prosjekt <ExternalLink size={16} className="ml-1" />
-              </a>
+              {project.tags && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                  target="_blank"
+                >
+                  Se prosjekt <ExternalLink size={16} className="ml-1" />
+                </a>
+              )}
             </div>
           </div>
         ))}

@@ -73,7 +73,7 @@ function OmMeg() {
               <div className="flex items-start space-x-4">
                 <span className="text-large">⚫️</span>
                 <p className="text-gray-600">
-                  Jeg er en 25 år gammel jente som går andre året på bachelor i
+                  Jeg er en 25 år gammel jente som går tredje året på bachelor i
                   dataingeniør på OsloMet. Gjennom ingeniørstudiet har jeg
                   opparbeidet meg et solid grunnlag innen programmering og
                   teknologi.
@@ -84,22 +84,23 @@ function OmMeg() {
                 <p className="text-gray-600">
                   Jeg har en genuin interesse for fagområdet data og
                   programmering, og jeg er veldig motivert til å lære mer. I
-                  løpet av studie til nå har jeg jobbet med flere spennende
-                  prosjekter, og arbeidet med ulike programmeringsspråk. Jeg har
-                  også erfaring med å jobbe i team, og trives godt med dette.
-                  Disse erfaringene har bidratt til at jeg har utviklet gode
-                  samarbeidsevner.
+                  løpet av dataingeniør bacheloren til nå har jeg jobbet med
+                  flere spennende prosjekter, og arbeidet med ulike
+                  programmeringsspråk. Jeg har også erfaring med å jobbe i team,
+                  og trives godt med dette. Disse erfaringene har bidratt til at
+                  jeg har utviklet gode samarbeidsevner.
                 </p>
               </div>
               <div className="flex items-start space-x-4">
                 <span className="text-large">⚫️</span>
                 <p className="text-gray-600">
-                  Fra min tidligere bachelor tar jeg med meg kunnskap og
-                  ferdigheter innenfor problemløsning, kommunikasjon, arbeid med
-                  mennesker og samarbeid. Jeg tror dette vil være verdifullt i
-                  en stilling hos dere. Arbeidserfaring fra butikk har gitt meg
-                  erfaringer rundt service, salg, samarbeid, kommunikasjon med
-                  kunder og forstå deres behov.
+                  Fra min tidligere fullførte bachelor i sykepleie tar jeg med
+                  meg kunnskap og ferdigheter innenfor problemløsning,
+                  kommunikasjon, arbeid med mennesker og samarbeid. Jeg tror
+                  dette vil være verdifullt i en stilling hos dere.
+                  Arbeidserfaring fra butikk har gitt meg erfaringer rundt
+                  service, salg, samarbeid, kommunikasjon med kunder og forstå
+                  deres behov.
                 </p>
               </div>
               <div className="flex items-start space-x-4">
@@ -174,6 +175,9 @@ function OmMeg() {
               <ul className="text-orange-800 space-y-2 list-disc list-inside">
                 <li>IntelliJ</li>
                 <li>Visual Studio Code</li>
+                <li>Linux (Bash-scripting)</li>
+                <li>Docker</li>
+                <li>Wireshark</li>
               </ul>
             </div>
           </div>
