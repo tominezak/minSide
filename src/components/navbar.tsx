@@ -68,9 +68,6 @@ const Navbar: React.FC = () => {
             <Link to="/projects" className={getNavLinkClass()}>
               Prosjekter
             </Link>
-            <Link to="/cv" className={getNavLinkClass()}>
-              CV
-            </Link>
           </div>
 
           {/* Mobil */}
@@ -102,13 +99,6 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Prosjekter
-            </Link>
-            <Link
-              to="/cv"
-              className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              CV
             </Link>
           </div>
         </div>
