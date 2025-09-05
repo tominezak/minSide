@@ -28,6 +28,24 @@ function Projects() {
       link: "https://github.com/tominezak/Oblig-repo",
       tags: ["Java", "JavaScript", "HTML", "Bootstrap", "Spring Boot", "SQL"],
     },
+    {
+      title: "Weather API App",
+      description:
+        " En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python med PyQt5 for GUI.",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "https://github.com/tominezak/WheaterAPI-app",
+      tags: ["Python", "PyQt5", "API"],
+    },
+    {
+      title: "Flere prosjekter kommer snart!",
+      description:
+        "Jeg jobber kontinuerlig med nye prosjekter og vil oppdatere denne siden snart med mer innhold.",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "#",
+      tags: ["Kommer snart"],
+    },
   ];
 
   return (
