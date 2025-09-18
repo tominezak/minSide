@@ -136,7 +136,6 @@ function OmMeg() {
                 <li>C#</li>
                 <li>SQL</li>
                 <li>HTML/CSS</li>
-                <li>Matlab</li>
               </ul>
             </div>
             <div className="bg-purple-50 p-6 rounded-lg shadow-lg">
