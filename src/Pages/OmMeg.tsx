@@ -133,6 +133,7 @@ function OmMeg() {
                 <li>JavaScript/TypeScript</li>
                 <li>Python</li>
                 <li>Java</li>
+                <li>C#</li>
                 <li>SQL</li>
                 <li>HTML/CSS</li>
                 <li>Matlab</li>
