@@ -135,7 +135,7 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/tomine-zakariassen-390022327/"
+              href="https://www.linkedin.com/in/tomine-garborg-zakariassen-390022327/"
               target="_blank"
               rel="noopener"
               data-cursor="Åpne"
