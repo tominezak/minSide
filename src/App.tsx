@@ -1,23 +1,36 @@
+import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/navbar";
-import OmMeg from "./Pages/OmMeg";
-import Projects from "./Pages/Projects";
-import { Footer } from "./components/footer";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Cursor from "./components/Cursor";
+import Loader from "./components/Loader";
+import Portfolio from "./Pages/Portfolio";
+import { SiteProvider } from "./SiteProvider";
+
+// Hele porteføljen er én side; gamle lenker til /projects hopper til prosjektene
+function OldRoutes() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (pathname === "/projects")
+      document.getElementById("prosjekter")?.scrollIntoView();
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-gray-50">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<OmMeg />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
+      <SiteProvider>
+        <Cursor />
+        <Loader />
+        <Nav />
+        <main>
+          <Portfolio />
+          <Footer />
         </main>
-        <Footer />
-      </div>
+        <OldRoutes />
+      </SiteProvider>
       <Analytics />
     </Router>
   );

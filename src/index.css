@@ -1,7 +1,398 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
 
-:root {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+body {
+  margin: 0;
+  --bg: #f3efe7;
+  --bg2: #eae4d8;
+  --ink: #1d1b18;
+  --mute: #655e54;
+  --line: rgba(29, 27, 24, 0.13);
+  --acc: #2e6be4;
+  --onacc: #fff;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.5s,
+    color 0.5s;
+  overflow-x: hidden;
+}
+body.dark {
+  --bg: #141311;
+  --bg2: #1c1a17;
+  --ink: #efe9df;
+  --mute: #9c9488;
+  --line: rgba(239, 233, 223, 0.12);
+  --acc: #6f9bff;
+  --onacc: #0e0d0b;
+}
+body.cc,
+body.cc * {
+  cursor: none !important;
+}
+::selection {
+  background: var(--acc);
+  color: var(--onacc);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--acc);
+}
+em {
+  color: var(--acc);
+}
+
+@keyframes marq {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--acc);
+  }
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotateX(-22deg) rotateY(0);
+  }
+  to {
+    transform: rotateX(-22deg) rotateY(360deg);
+  }
+}
+@keyframes drop {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* Felles */
+.eyebrow {
+  font:
+    500 12px/1 "JetBrains Mono",
+    monospace;
+  color: var(--mute);
+  letter-spacing: 0.06em;
+}
+.h2 {
+  margin: 0;
+  font:
+    400 clamp(48px, 7vw, 104px) / 0.95 "Instrument Serif",
+    serif;
+  letter-spacing: -0.02em;
+}
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.sec-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--ink);
+  padding-top: 20px;
+}
+
+/* Knapper og merkelapper */
+.btn {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 16px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn:hover {
+  background: var(--acc);
+  color: var(--onacc);
+}
+.btn-ghost {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 16px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  background: var(--bg);
+}
+.btn-ghost:hover {
+  border-color: var(--acc);
+  color: var(--acc);
+}
+.chip {
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: var(--bg);
+}
+.tag {
+  border: 1px solid var(--line);
+  padding: 6px 9px;
+  border-radius: 4px;
+}
+.pill {
+  font:
+    400 12px/1 "JetBrains Mono",
+    monospace;
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+
+/* Meny */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(20px, 4vw, 56px);
+  font:
+    500 13px/1 "JetBrains Mono",
+    monospace;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.nav a {
+  color: var(--ink);
+}
+.nav a:hover {
+  color: var(--acc);
+}
+.nav .theme {
+  font: inherit;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav .theme:hover {
+  border-color: var(--ink);
+}
+.nav .contact {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+.nav .contact:hover {
+  background: var(--acc);
+  color: var(--onacc);
+}
+/* På smale telefoner får ikke alle menypunktene plass */
+@media (max-width: 480px) {
+  .nav .hide-xs {
+    display: none;
+  }
+}
+
+/* Terminal */
+.term-cmd {
+  text-align: left;
+  background: none;
+  border: 0;
+  color: #a9a193;
+  font: inherit;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.term-cmd:hover {
+  background: rgba(111, 155, 255, 0.14);
+  color: #e8e2d6;
+}
+
+/* Min reise */
+.row {
+  display: grid;
+  grid-template-columns: minmax(60px, 120px) minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vw, 48px);
+  align-items: baseline;
+  padding: 32px 12px;
+  border-bottom: 1px solid var(--line);
+  transition:
+    background 0.3s,
+    padding 0.3s;
+}
+.row:hover {
+  background: var(--bg2);
+  padding-left: 24px;
+}
+.row h3 {
+  margin: 0;
+  font:
+    500 clamp(22px, 2.2vw, 30px) / 1.15 "Hanken Grotesk",
+    sans-serif;
+  letter-spacing: -0.01em;
+}
+.row p {
+  margin: 0;
+  color: var(--mute);
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+.cv-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--ink);
+  padding: 14px 20px;
+  border-radius: 999px;
+  font:
+    500 13px/1 "JetBrains Mono",
+    monospace;
+  color: var(--ink);
+}
+.cv-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* Portrett */
+.polaroid {
+  transform: rotate(-2.5deg);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px 12px 18px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+}
+.polaroid:hover {
+  transform: rotate(0) translateY(-4px);
+}
+
+/* Prosjektkort */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22vh;
+}
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(20px, 3vw, 36px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(24px, 4vw, 56px);
+  min-height: 440px;
+  box-shadow: 0 -20px 50px -30px rgba(0, 0, 0, 0.25);
+}
+/* Kortene stables bare når de får plass på skjermen; på mobil ligger de under hverandre */
+@media (min-width: 768px) {
+  .stack > article {
+    position: sticky;
+  }
+}
+@media (max-width: 767px) {
+  .stack {
+    gap: 20px;
+  }
+}
+.card h3 {
+  margin: 0;
+  font:
+    400 clamp(44px, 5.5vw, 76px) / 0.95 "Instrument Serif",
+    serif;
+  letter-spacing: -0.02em;
+}
+.card-link {
+  margin-top: auto;
+  align-self: flex-start;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.card-link:hover {
+  background: var(--acc);
+  color: var(--onacc);
+}
+.cube-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--acc);
+  background: color-mix(in oklab, var(--bg) 70%, transparent);
+}
+
+/* Kontakt */
+.mail-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 20px 28px;
+  border-radius: 999px;
+  font:
+    500 clamp(16px, 1.8vw, 22px) / 1 "JetBrains Mono",
+    monospace;
+}
+.mail-btn:hover {
+  background: var(--acc);
+  color: var(--onacc);
+}
+.copy {
+  border: 1px solid var(--ink);
+  background: none;
+  color: var(--ink);
+  padding: 0 22px;
+  min-height: 60px;
+  border-radius: 999px;
+  font:
+    500 13px/1 "JetBrains Mono",
+    monospace;
+}
+.copy:hover {
+  border-color: var(--acc);
+  color: var(--acc);
 }
