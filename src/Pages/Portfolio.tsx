@@ -129,8 +129,8 @@ const PROJECTS = [
     title: "Weather API App",
     host: "github.com/tominezak",
     description:
-      "En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python med PyQt5 for GUI.",
-    tags: ["Python", "PyQt5", "API"],
+      "En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python.",
+    tags: ["Python", "API"],
     link: "https://github.com/tominezak/WheaterAPI-app",
     image:
       "https://images.unsplash.com/photo-1509803874385-db7c23652552?q=80&w=1600&auto=format&fit=crop",
