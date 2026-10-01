@@ -380,3 +380,13 @@ em {
   border-color: var(--acc);
   color: var(--acc);
 }
+
+/* Ferdigheter: alltid to kolonner, én på smale telefoner */
+.skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 520px) {
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

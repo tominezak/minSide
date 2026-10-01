@@ -660,9 +660,9 @@ function Skills() {
         >
           <div
             data-reveal
+            className="skills-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",
               gap: 1,
               background: "var(--line)",
               border: "1px solid var(--line)",
