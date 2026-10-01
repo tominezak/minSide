@@ -59,7 +59,7 @@ export default function Terminal() {
       },
       ferdigheter: () => {
         out.push(
-          "JavaScript/TypeScript · Python · Java · C# · SQL · React · Spring Boot · Docker",
+          "JavaScript/TypeScript · Python · Java · Kotlin · C# · SQL · React · Spring Boot · Docker",
         );
         go("ferdigheter");
       },
