@@ -53,7 +53,8 @@ function BigName() {
         {
           position: "relative",
           margin: "clamp(40px,6vw,80px) 0 0",
-          font: "400 clamp(64px,14.5vw,260px)/.8 'Instrument Serif',serif",
+          // Skalerer med skjermbredden så hele navnet alltid får plass
+          font: "400 clamp(36px, calc((100vw - 2 * clamp(20px,4vw,56px)) / 6.2), 260px)/.8 'Instrument Serif',serif",
           letterSpacing: "-.04em",
           whiteSpace: "nowrap",
           textAlign: "center",
@@ -104,7 +105,7 @@ export default function Footer() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+          gridTemplateColumns: "repeat(auto-fit,minmax(140px,1fr))",
           gap: 28,
           font: "400 13px/1.8 'JetBrains Mono',monospace",
           position: "relative",
@@ -160,6 +161,7 @@ export default function Footer() {
       <div
         style={{
           display: "flex",
+          flexWrap: "wrap",
           justifyContent: "space-between",
           alignItems: "center",
           gap: 16,
@@ -169,8 +171,15 @@ export default function Footer() {
         }}
       >
         <span>© {new Date().getFullYear()} Alle rettigheter forbeholdt</span>
-        <span style={{ opacity: 0.6 }}>↑↑↓↓←→←→BA</span>
-        <a href="#hjem" data-cursor="Topp" style={{ color: "var(--ink)" }}>
+        {/* Konami-koden trenger tastatur, så hintet skjules på mobil */}
+        <span className="hide-mobile" style={{ opacity: 0.6 }}>
+          ↑↑↓↓←→←→BA
+        </span>
+        <a
+          href="#hjem"
+          data-cursor="Topp"
+          style={{ color: "var(--ink)", whiteSpace: "nowrap" }}
+        >
           ↑ Topp
         </a>
       </div>

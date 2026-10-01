@@ -394,10 +394,13 @@ function Hero() {
           color: "var(--mute)",
         }}
       >
-        <span>Portefølje © {new Date().getFullYear()}</span>
+        <span style={{ whiteSpace: "nowrap" }}>
+          Portefølje © {new Date().getFullYear()}
+        </span>
         <a
           href="#om"
           data-cursor="Scroll"
+          className="hide-mobile"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -416,7 +419,14 @@ function Hero() {
             }}
           />
         </a>
-        <span style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <span
+          style={{
+            display: "flex",
+            gap: 8,
+            alignItems: "center",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span
             style={{
               width: 6,
@@ -457,10 +467,7 @@ function About() {
             alignItems: "start",
           }}
         >
-          <div
-            data-reveal
-            style={{ position: "sticky", top: 96, maxWidth: 440 }}
-          >
+          <div data-reveal className="about-photo" style={{ maxWidth: 440 }}>
             <div className="polaroid">
               <div
                 style={{
@@ -638,6 +645,7 @@ function Journey() {
 }
 
 function Skills() {
+  const [touch] = useState(() => matchMedia("(pointer: coarse)").matches);
   return (
     <section
       id="ferdigheter"
@@ -711,7 +719,7 @@ function Skills() {
             }}
           >
             <span style={{ font: `400 12px/1 ${MONO}`, color: "var(--mute)" }}>
-              Tips: dra i kula ↓
+              Tips: {touch ? "sveip" : "dra"} i kula ↓
             </span>
             <SkillSphere />
           </div>
