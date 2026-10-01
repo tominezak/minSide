@@ -273,22 +273,6 @@ em {
   line-height: 1.55;
   max-width: 60ch;
 }
-.cv-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid var(--ink);
-  padding: 14px 20px;
-  border-radius: 999px;
-  font:
-    500 13px/1 "JetBrains Mono",
-    monospace;
-  color: var(--ink);
-}
-.cv-btn:hover {
-  background: var(--ink);
-  color: var(--bg);
-}
 
 /* Portrett */
 .polaroid {
@@ -395,4 +379,123 @@ em {
 .copy:hover {
   border-color: var(--acc);
   color: var(--acc);
+}
+
+/* Ferdigheter: alltid to kolonner, én på smale telefoner */
+.skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 520px) {
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Terminal */
+.term-grid {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+}
+.term-cmds {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 340px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.term-cmds-label {
+  color: #6b655b;
+  font-size: 11px;
+  padding: 0 10px 8px;
+  letter-spacing: 0.06em;
+}
+.term-out {
+  height: 340px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.term-input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  color: #e8e2d6;
+  font: inherit;
+  caret-color: #6f9bff;
+  padding: 0;
+}
+
+/* Portrettet følger med når man scroller, men bare når det står ved siden av teksten */
+@media (min-width: 900px) {
+  .about-photo {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* Mobil */
+@media (max-width: 640px) {
+  /* Kommandoene blir en rad med knapper over utskriften, så teksten får hele bredden */
+  .term-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .term-cmds {
+    flex-direction: row;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 8px;
+    scrollbar-width: none;
+  }
+  .term-cmds::-webkit-scrollbar {
+    display: none;
+  }
+  .term-cmds-label {
+    display: none;
+  }
+  .term-cmd {
+    flex: none;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 10px;
+  }
+  .term-out {
+    height: 260px;
+    padding: 14px;
+  }
+  /* iOS zoomer inn på felt med mindre enn 16px skrift */
+  .term-input {
+    font-size: 16px;
+  }
+
+  /* Min reise: nummer til venstre, tittel, tekst og merkelapp under hverandre */
+  .row {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 6px 14px;
+    padding: 24px 0;
+  }
+  .row:hover {
+    padding-left: 0;
+    background: none;
+  }
+  .row > :last-child {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 6px;
+  }
+
+  /* !important fordi noen av elementene har display i inline-stilen */
+  .hide-mobile {
+    display: none !important;
+  }
 }

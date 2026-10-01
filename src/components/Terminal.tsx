@@ -17,7 +17,6 @@ const MENU = [
   "ferdigheter",
   "prosjekter",
   "kontakt",
-  "cv",
   "tema",
   "fest",
   "ls",
@@ -44,7 +43,7 @@ export default function Terminal() {
     const cmds: Record<string, () => void> = {
       help: () =>
         out.push(
-          "om · reise · ferdigheter · prosjekter · kontakt · cv · tema · fest · clear",
+          "om · reise · ferdigheter · prosjekter · kontakt · tema · fest · clear",
         ),
       om: () => {
         out.push(
@@ -69,10 +68,6 @@ export default function Terminal() {
         go("prosjekter");
       },
       kontakt: () => out.push("tominezak@gmail.com · 98858944"),
-      cv: () => {
-        out.push("Åpner CV …");
-        go("reise");
-      },
       tema: () => out.push("Tema: " + (toggleTheme() ? "mørk" : "lys")),
       fest: () => out.push("Festmodus: " + (toggleFest() ? "på" : "av")),
       whoami: () => out.push("gjest@tzak"),
@@ -94,7 +89,11 @@ export default function Terminal() {
 
   return (
     <div
-      onClick={() => field.current?.focus({ preventScroll: true })}
+      onClick={() => {
+        // På touch ville dette åpnet tastaturet ved hvert trykk i terminalen
+        if (matchMedia("(pointer:fine)").matches)
+          field.current?.focus({ preventScroll: true });
+      }}
       style={{
         background: "#15140F",
         color: "#E8E2D6",
@@ -122,31 +121,9 @@ export default function Terminal() {
           <span style={{ width: 9, height: 9, background: "#6F9BFF" }} />
         </span>
       </div>
-      <div
-        style={{ display: "grid", gridTemplateColumns: "132px minmax(0,1fr)" }}
-      >
-        <div
-          style={{
-            borderRight: "1px solid rgba(255,255,255,.08)",
-            padding: "14px 8px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            height: 340,
-            boxSizing: "border-box",
-            overflowY: "auto",
-          }}
-        >
-          <span
-            style={{
-              color: "#6B655B",
-              fontSize: 11,
-              padding: "0 10px 8px",
-              letterSpacing: ".06em",
-            }}
-          >
-            KOMMANDOER
-          </span>
+      <div className="term-grid">
+        <div className="term-cmds">
+          <span className="term-cmds-label">KOMMANDOER</span>
           {MENU.map((name) => (
             <button
               key={name}
@@ -161,18 +138,7 @@ export default function Terminal() {
             </button>
           ))}
         </div>
-        <div
-          ref={body}
-          style={{
-            height: 340,
-            boxSizing: "border-box",
-            overflowY: "auto",
-            padding: "16px 18px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
+        <div ref={body} className="term-out">
           {lines.map((l, i) => (
             <div key={i} style={{ display: "flex", wordBreak: "break-word" }}>
               {l.cmd ? (
@@ -213,17 +179,7 @@ export default function Terminal() {
               autoComplete="off"
               aria-label="Terminal"
               placeholder="skriv help"
-              style={{
-                flex: 1,
-                minWidth: 0,
-                background: "none",
-                border: 0,
-                outline: 0,
-                color: "#E8E2D6",
-                font: "inherit",
-                caretColor: "#6F9BFF",
-                padding: 0,
-              }}
+              className="term-input"
             />
           </label>
         </div>

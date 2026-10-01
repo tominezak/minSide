@@ -129,8 +129,8 @@ const PROJECTS = [
     title: "Weather API App",
     host: "github.com/tominezak",
     description:
-      "En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python med PyQt5 for GUI.",
-    tags: ["Python", "PyQt5", "API"],
+      "En vær-app som henter data fra OpenWeatherMap API for å vise nåværende vær. Bygget i Python.",
+    tags: ["Python", "API"],
     link: "https://github.com/tominezak/WheaterAPI-app",
     image:
       "https://images.unsplash.com/photo-1509803874385-db7c23652552?q=80&w=1600&auto=format&fit=crop",
@@ -394,10 +394,13 @@ function Hero() {
           color: "var(--mute)",
         }}
       >
-        <span>Portefølje © {new Date().getFullYear()}</span>
+        <span style={{ whiteSpace: "nowrap" }}>
+          Portefølje © {new Date().getFullYear()}
+        </span>
         <a
           href="#om"
           data-cursor="Scroll"
+          className="hide-mobile"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -416,7 +419,14 @@ function Hero() {
             }}
           />
         </a>
-        <span style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <span
+          style={{
+            display: "flex",
+            gap: 8,
+            alignItems: "center",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span
             style={{
               width: 6,
@@ -457,10 +467,7 @@ function About() {
             alignItems: "start",
           }}
         >
-          <div
-            data-reveal
-            style={{ position: "sticky", top: 96, maxWidth: 440 }}
-          >
+          <div data-reveal className="about-photo" style={{ maxWidth: 440 }}>
             <div className="polaroid">
               <div
                 style={{
@@ -579,22 +586,6 @@ function Journey() {
               Kapittel for <em>kapittel</em>
             </h2>
           </div>
-          <a href="#" data-cursor="Åpne" className="cv-btn">
-            Last ned CV{" "}
-            <span
-              style={{
-                display: "grid",
-                placeItems: "center",
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                background: "var(--acc)",
-                color: "var(--onacc)",
-              }}
-            >
-              ↓
-            </span>
-          </a>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {JOURNEY.map((j, i) => (
@@ -654,6 +645,7 @@ function Journey() {
 }
 
 function Skills() {
+  const [touch] = useState(() => matchMedia("(pointer: coarse)").matches);
   return (
     <section
       id="ferdigheter"
@@ -676,9 +668,9 @@ function Skills() {
         >
           <div
             data-reveal
+            className="skills-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",
               gap: 1,
               background: "var(--line)",
               border: "1px solid var(--line)",
@@ -727,7 +719,7 @@ function Skills() {
             }}
           >
             <span style={{ font: `400 12px/1 ${MONO}`, color: "var(--mute)" }}>
-              Tips: dra i kula ↓
+              Tips: {touch ? "sveip" : "dra"} i kula ↓
             </span>
             <SkillSphere />
           </div>

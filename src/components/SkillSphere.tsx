@@ -23,7 +23,6 @@ const WORDS = [
   "Wireshark",
   "Node.js",
   "API",
-  "PyQt5",
   "Teamarbeid",
 ];
 
