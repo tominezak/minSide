@@ -77,7 +77,15 @@ const JOURNEY = [
 const SKILLS = [
   {
     title: "Programmeringsspråk",
-    items: ["JavaScript/TypeScript", "Python", "Java", "C#", "SQL", "HTML/CSS"],
+    items: [
+      "JavaScript/TypeScript",
+      "Python",
+      "Java",
+      "Kotlin",
+      "C#",
+      "SQL",
+      "HTML/CSS",
+    ],
   },
   {
     title: "Rammeverk/bibliotek",

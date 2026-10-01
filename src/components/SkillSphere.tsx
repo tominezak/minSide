@@ -5,6 +5,7 @@ const WORDS = [
   "TypeScript",
   "Python",
   "Java",
+  "Kotlin",
   "C#",
   "SQL",
   "HTML/CSS",

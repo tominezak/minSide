@@ -7,7 +7,7 @@ const START: Line[] = [
   { text: "whoami", cmd: true },
   { text: "tomine — fullstack-utvikler", cmd: false },
   { text: "cat stack.txt", cmd: true },
-  { text: "React · TypeScript · Node.js · Java · Spring Boot", cmd: false },
+  { text: "React · TypeScript · Kotlin", cmd: false },
   { text: "Skriv «help» for å se kommandoer.", cmd: false },
 ];
 
@@ -59,7 +59,7 @@ export default function Terminal() {
       },
       ferdigheter: () => {
         out.push(
-          "JavaScript/TypeScript · Python · Java · C# · SQL · React · Spring Boot · Docker",
+          "JavaScript/TypeScript · Python · Java · Kotlin · C# · SQL · React · Spring Boot · Docker",
         );
         go("ferdigheter");
       },
