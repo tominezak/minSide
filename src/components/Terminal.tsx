@@ -17,7 +17,6 @@ const MENU = [
   "ferdigheter",
   "prosjekter",
   "kontakt",
-  "cv",
   "tema",
   "fest",
   "ls",
@@ -44,7 +43,7 @@ export default function Terminal() {
     const cmds: Record<string, () => void> = {
       help: () =>
         out.push(
-          "om · reise · ferdigheter · prosjekter · kontakt · cv · tema · fest · clear",
+          "om · reise · ferdigheter · prosjekter · kontakt · tema · fest · clear",
         ),
       om: () => {
         out.push(
@@ -69,10 +68,6 @@ export default function Terminal() {
         go("prosjekter");
       },
       kontakt: () => out.push("tominezak@gmail.com · 98858944"),
-      cv: () => {
-        out.push("Åpner CV …");
-        go("reise");
-      },
       tema: () => out.push("Tema: " + (toggleTheme() ? "mørk" : "lys")),
       fest: () => out.push("Festmodus: " + (toggleFest() ? "på" : "av")),
       whoami: () => out.push("gjest@tzak"),

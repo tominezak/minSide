@@ -273,22 +273,6 @@ em {
   line-height: 1.55;
   max-width: 60ch;
 }
-.cv-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid var(--ink);
-  padding: 14px 20px;
-  border-radius: 999px;
-  font:
-    500 13px/1 "JetBrains Mono",
-    monospace;
-  color: var(--ink);
-}
-.cv-btn:hover {
-  background: var(--ink);
-  color: var(--bg);
-}
 
 /* Portrett */
 .polaroid {

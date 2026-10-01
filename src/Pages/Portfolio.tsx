@@ -579,22 +579,6 @@ function Journey() {
               Kapittel for <em>kapittel</em>
             </h2>
           </div>
-          <a href="#" data-cursor="Åpne" className="cv-btn">
-            Last ned CV{" "}
-            <span
-              style={{
-                display: "grid",
-                placeItems: "center",
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                background: "var(--acc)",
-                color: "var(--onacc)",
-              }}
-            >
-              ↓
-            </span>
-          </a>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {JOURNEY.map((j, i) => (
